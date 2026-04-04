@@ -1,0 +1,162 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const faseLabel: Record<string, string> = {
+  folicular:  'Fase Folicular',
+  ovulatoria: 'Ovulação',
+  lutea:      'Fase Lútea',
+  menstrual:  'Menstruação',
+};
+
+const faseDesc: Record<string, string> = {
+  folicular:  'dias 1–13',
+  ovulatoria: 'dia 14',
+  lutea:      'dias 15–28',
+  menstrual:  'dias 1–5',
+};
+
+const formattedDate = new Date(post.data.pubDate).toLocaleDateString('pt-BR', {
+  day: 'numeric', month: 'long', year: 'numeric'
+});
+---
+
+<Base title={`${post.data.title} — Coconut Yoga`} description={post.data.description}>
+
+  <!-- READING PROGRESS -->
+  <div id="progress-bar"></div>
+
+  <!-- ARTICLE HEADER -->
+  <header class={`post-header fase-${post.data.fase}`}>
+    <div class="container post-header-inner">
+      <div class="post-meta-top">
+        <span class="fase-badge">{faseLabel[post.data.fase]} · {faseDesc[post.data.fase]}</span>
+        <span class="post-categoria">{post.data.categoria}</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      <p class="post-desc">{post.data.description}</p>
+      <div class="post-meta-bottom">
+        <time>{formattedDate}</time>
+        <span>·</span>
+        <span>{post.data.readTime} min de leitura</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <article class="section">
+    <div class="container">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <!-- FASE CTA -->
+      <div class={`fase-cta fase-${post.data.fase}`}>
+        <div>
+          <strong>quer saber mais sobre a {faseLabel[post.data.fase].toLowerCase()}?</strong>
+          <p>Veja todos os artigos desta fase e aprenda a se nutrir melhor em cada etapa do seu ciclo.</p>
+        </div>
+        <a href={`/blog?fase=${post.data.fase}`} class="btn btn-primary">ver artigos da fase</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- BACK TO BLOG -->
+  <div class="container" style="padding-bottom: 60px;">
+    <a href="/blog" class="btn btn-outline">← voltar para os artigos</a>
+  </div>
+
+</Base>
+
+<script>
+  // Reading progress bar
+  const bar = document.getElementById('progress-bar')!;
+  const article = document.querySelector('article')!;
+
+  window.addEventListener('scroll', () => {
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+    const scrolled = window.scrollY - articleTop;
+    const progress = Math.min(Math.max(scrolled / articleHeight, 0), 1);
+    bar.style.width = `${Math.round(progress * 100)}%`;
+  });
+</script>
+
+<style>
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--terra);
+  width: 0%;
+  z-index: 200;
+  transition: width 0.1s linear;
+}
+
+.post-header {
+  padding: clamp(48px, 8vw, 96px) 0 clamp(32px, 5vw, 56px);
+  background: var(--fase-bg);
+  border-bottom: 1px solid var(--sand);
+}
+.post-header-inner { max-width: 72ch; }
+.post-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.post-categoria {
+  font-size: 12px;
+  color: var(--bark-light);
+  font-weight: 400;
+}
+.post-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.post-desc {
+  font-size: 16px;
+  color: var(--bark-mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 60ch;
+}
+.post-meta-bottom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--bark-light);
+}
+
+.section { padding: clamp(40px, 6vw, 72px) 0 24px; }
+
+.fase-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--fase-bg);
+  border: 1px solid var(--fase-color);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+.fase-cta strong { display: block; font-size: 15px; color: var(--bark); margin-bottom: 4px; }
+.fase-cta p { font-size: 13px; margin: 0; }
+
+@media (max-width: 640px) {
+  .fase-cta { flex-direction: column; align-items: flex-start; }
+}
+</style>

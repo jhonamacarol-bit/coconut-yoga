@@ -1,0 +1,378 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Guia Coconut Yoga — O que eu como nos ciclos"
+  description="Receitas, exercícios e saúde mental organizados por fase do ciclo menstrual. Sem dietas, sem culpa, com muito cuidado."
+>
+
+  <!-- HERO -->
+  <section class="hero-venda">
+    <div class="container hero-venda-inner">
+      <div class="hero-venda-text">
+        <span class="eyebrow">produto digital · pdf</span>
+        <h1>Guia Coconut Yoga<br><em>O que eu como nos ciclos</em></h1>
+        <p class="hero-desc">Receitas, exercícios e cuidado com a saúde mental organizados por cada fase do seu ciclo menstrual — sem dietas restritivas, sem contagem de calorias, sem culpa.</p>
+        <div class="preco-box">
+          <span class="preco-label">por apenas</span>
+          <span class="preco-valor">R$27</span>
+          <span class="preco-sub">pagamento único · acesso imediato</span>
+        </div>
+        <a href="#comprar" class="btn btn-primary btn-lg">quero o guia agora</a>
+        <p class="garantia">🌿 Se não gostar, devolvemos seu dinheiro em 7 dias.</p>
+      </div>
+      <div class="hero-venda-visual">
+        <div class="mockup-pdf">
+          <div class="mockup-pdf__capa">
+            <span class="mockup-logo">coconut yoga</span>
+            <h3>O que eu como<br>nos ciclos</h3>
+            <div class="mockup-fases">
+              <span class="mf mf-fol">folicular</span>
+              <span class="mf mf-ovu">ovulação</span>
+              <span class="mf mf-lut">lútea</span>
+              <span class="mf mf-men">menstrual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section class="section section--tinted">
+    <div class="container">
+      <h2 class="section-title-center">este guia é para você que...</h2>
+      <div class="cards-grid cards-grid--3" style="margin-top:32px">
+        {[
+          { icon: '🌀', texto: 'Sente que o corpo muda muito ao longo do mês e não entende o porquê' },
+          { icon: '🥗', texto: 'Quer comer melhor mas está cansada de dietas que não funcionam' },
+          { icon: '💭', texto: 'Tem uma relação difícil com a comida e quer recomeçar com gentileza' },
+          { icon: '😮‍💨', texto: 'Sofre com TPM, cólica ou falta de energia em certas fases do mês' },
+          { icon: '🧘', texto: 'Quer entender como exercícios e saúde mental se conectam ao ciclo' },
+          { icon: '🌱', texto: 'Busca uma abordagem de saúde que respeite o seu ritmo e o seu corpo' },
+        ].map(item => (
+          <div class="feature-card">
+            <span class="feature-icon">{item.icon}</span>
+            <p>{item.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE TEM DENTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="dentro-grid">
+        <div class="dentro-text">
+          <span class="eyebrow">o que você vai encontrar</span>
+          <h2>tudo organizado<br>pela sua <em>fase</em></h2>
+          <p>O guia é dividido pelas 4 fases do ciclo. Em cada fase você encontra receitas, sugestões de movimento e práticas de cuidado mental pensadas para aquele momento específico do seu corpo.</p>
+        </div>
+        <div class="dentro-lista">
+          {[
+            { fase: 'folicular', cor: 'sage',     titulo: 'Fase folicular', itens: ['Receitas leves e energizantes', 'Movimentos de alta intensidade', 'Práticas de autoconhecimento'] },
+            { fase: 'ovulatoria', cor: 'terra',   titulo: 'Ovulação',       itens: ['Receitas anti-inflamatórias', 'Exercícios de força', 'Conexão e expressão'] },
+            { fase: 'lutea', cor: 'lavender',     titulo: 'Fase lútea',     itens: ['Receitas aconchegantes', 'Movimentos suaves', 'Regulação emocional'] },
+            { fase: 'menstrual', cor: 'rose',     titulo: 'Menstruação',    itens: ['Receitas reconfortantes', 'Alongamento e descanso', 'Autocuidado profundo'] },
+          ].map(f => (
+            <div class={`dentro-item fase-${f.fase}`}>
+              <strong>{f.titulo}</strong>
+              <ul>
+                {f.itens.map(item => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BÔNUS -->
+  <section class="section section--tinted">
+    <div class="container">
+      <h2 class="section-title-center">o que está incluído</h2>
+      <div class="bonus-grid" style="margin-top:32px">
+        {[
+          { titulo: 'PDF completo', desc: 'Mais de 60 páginas organizadas por fase, com receitas, exercícios e práticas.' },
+          { titulo: 'Receitas com lista de compras', desc: 'Cada receita vem com os ingredientes listados para facilitar o seu dia.' },
+          { titulo: 'Guia de movimentos', desc: 'Sugestões de exercícios adaptadas para cada fase — do descanso à alta energia.' },
+          { titulo: 'Práticas de saúde mental', desc: 'Técnicas simples de regulação emocional e autocuidado para cada momento.' },
+        ].map(b => (
+          <div class="bonus-card">
+            <div class="bonus-check">✓</div>
+            <div>
+              <strong>{b.titulo}</strong>
+              <p>{b.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA COMPRA -->
+  <section class="section cta-compra" id="comprar">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-box__text">
+          <h2>Guia Coconut Yoga<br><em>O que eu como nos ciclos</em></h2>
+          <p>Um guia completo de receitas, exercícios e saúde mental organizado pelo seu ciclo menstrual.</p>
+          <ul class="cta-inclui">
+            <li>✓ PDF com mais de 60 páginas</li>
+            <li>✓ Receitas para as 4 fases</li>
+            <li>✓ Guia de movimentos e exercícios</li>
+            <li>✓ Práticas de saúde mental</li>
+            <li>✓ Acesso imediato após o pagamento</li>
+          </ul>
+        </div>
+        <div class="cta-box__compra">
+          <div class="preco-box preco-box--dark">
+            <span class="preco-label">investimento</span>
+            <span class="preco-valor">R$27</span>
+            <span class="preco-sub">pagamento único</span>
+          </div>
+          <a href="#" class="btn btn-primary btn-lg" id="btn-comprar">quero o guia agora →</a>
+          <p class="garantia">🌿 Garantia de 7 dias. Se não gostar, devolvemos 100%.</p>
+          <p class="seguro">🔒 Pagamento seguro via Pix ou cartão</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO FINAL -->
+  <section class="manifesto-final">
+    <div class="container">
+      <p>"Este guia foi criado com cuidado para quem já sofreu com o próprio corpo.<br>Aqui não tem culpa, não tem restrição, não tem antes e depois.<br>Só você, o seu ciclo e uma nova forma de se cuidar."</p>
+      <span>— Coconut Yoga</span>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 16px;
+}
+
+/* HERO */
+.hero-venda {
+  padding: clamp(60px, 10vw, 100px) 0 clamp(40px, 6vw, 80px);
+  background: var(--cream-dark);
+  border-bottom: 1px solid var(--sand);
+}
+.hero-venda-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-venda-text h1 { margin-bottom: 16px; }
+.hero-venda-text h1 em { color: var(--terra); font-style: italic; }
+.hero-desc { font-size: 15px; margin-bottom: 28px; max-width: 46ch; }
+
+.preco-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.preco-label { font-size: 12px; color: var(--bark-light); text-transform: uppercase; letter-spacing: 1px; }
+.preco-valor { font-family: var(--font-display); font-size: 3rem; color: var(--bark); line-height: 1.1; }
+.preco-sub { font-size: 12px; color: var(--bark-light); margin-top: 2px; }
+.preco-box--dark .preco-label { color: var(--bark-light); }
+.preco-box--dark .preco-valor { color: var(--bark); }
+
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+.garantia { font-size: 12px; color: var(--sage-dark); margin-top: 12px; }
+.seguro { font-size: 12px; color: var(--bark-light); margin-top: 6px; }
+
+/* MOCKUP PDF */
+.hero-venda-visual { display: flex; justify-content: center; }
+.mockup-pdf {
+  width: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(44,37,32,0.15);
+}
+.mockup-pdf__capa {
+  background: var(--bark);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 340px;
+  justify-content: space-between;
+}
+.mockup-logo {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--terra-light);
+  letter-spacing: 2px;
+}
+.mockup-pdf__capa h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--cream);
+  line-height: 1.2;
+  font-weight: 300;
+}
+.mockup-fases { display: flex; flex-direction: column; gap: 6px; }
+.mf {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  display: inline-block;
+  width: fit-content;
+}
+.mf-fol { background: #EBF2EC; color: #4E7552; }
+.mf-ovu { background: #F5EBE3; color: #9E6440; }
+.mf-lut { background: #EDE8F5; color: #6B5494; }
+.mf-men { background: #F5E8E8; color: #9E5252; }
+
+/* SEÇÕES */
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+.section--tinted { background: var(--cream-dark); }
+.section-title-center {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-align: center;
+  color: var(--bark);
+}
+
+/* PARA QUEM É */
+.cards-grid { display: grid; gap: 16px; }
+.cards-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.feature-card {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feature-icon { font-size: 24px; }
+.feature-card p { font-size: 13px; margin: 0; }
+
+/* DENTRO */
+.dentro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+.dentro-text h2 em { color: var(--terra); font-style: italic; }
+.dentro-text p { margin-top: 16px; }
+.dentro-lista { display: flex; flex-direction: column; gap: 12px; }
+.dentro-item {
+  background: white;
+  border: 1px solid var(--sand);
+  border-left: 3px solid var(--fase-color);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 16px 20px;
+}
+.dentro-item strong { display: block; font-size: 14px; color: var(--bark); margin-bottom: 8px; }
+.dentro-item ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.dentro-item li { font-size: 13px; color: var(--bark-mid); }
+.dentro-item li::before { content: '→ '; color: var(--fase-color); }
+
+/* BÔNUS */
+.bonus-grid { display: flex; flex-direction: column; gap: 16px; max-width: 700px; margin-inline: auto; }
+.bonus-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+.bonus-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.bonus-card strong { display: block; font-size: 14px; color: var(--bark); margin-bottom: 4px; }
+.bonus-card p { font-size: 13px; margin: 0; }
+
+/* CTA */
+.cta-compra { background: var(--cream-dark); }
+.cta-box {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.cta-box__text h2 em { color: var(--terra); font-style: italic; }
+.cta-box__text p { margin-top: 12px; margin-bottom: 20px; }
+.cta-inclui { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.cta-inclui li { font-size: 14px; color: var(--bark-mid); }
+.cta-box__compra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  background: var(--cream-dark);
+  border-radius: var(--radius-md);
+  padding: 32px;
+}
+.cta-box__compra .btn { width: 100%; justify-content: center; }
+
+/* MANIFESTO FINAL */
+.manifesto-final {
+  background: var(--bark);
+  padding: clamp(48px, 8vw, 80px) 0;
+  text-align: center;
+}
+.manifesto-final p {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-bottom: 16px;
+}
+.manifesto-final span {
+  font-size: 13px;
+  color: var(--terra-light);
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-venda-inner { grid-template-columns: 1fr; }
+  .hero-venda-visual { order: -1; }
+  .dentro-grid { grid-template-columns: 1fr; }
+  .cta-box { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cards-grid--3 { grid-template-columns: 1fr; }
+}
+</style>
+</parameter>
+<parameter name="path">/home/claude/coconut-yoga/src/pages/guia.astro</parameter>

@@ -6,59 +6,7 @@
   <title>Coconut Yoga — Admin</title>
 </head>
 <body>
-  <script>
-    window.CMS_MANUAL_INIT = true;
-  </script>
- <script src="https://unpkg.com/decap-cms@3.1.2/dist/decap-cms.js"></script>
-  <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: 'github',
-          repo: 'jhonamacarol-bit/coconut-yoga',
-          branch: 'main',
-          base_url: 'https://coconut-yoga.vercel.app',
-          auth_endpoint: 'api/auth'
-        },
-        media_folder: 'public/images',
-        public_folder: '/images',
-        collections: [
-          {
-            name: 'blog',
-            label: 'Artigos',
-            folder: 'src/content/blog',
-            create: true,
-            slug: '{{slug}}',
-            fields: [
-              { label: 'Título', name: 'title', widget: 'string' },
-              { label: 'Descrição', name: 'description', widget: 'string' },
-              { label: 'Data', name: 'pubDate', widget: 'datetime' },
-              { label: 'Fase', name: 'fase', widget: 'select', options: [
-                { label: 'Fase Folicular', value: 'folicular' },
-                { label: 'Ovulação', value: 'ovulatoria' },
-                { label: 'Fase Lútea', value: 'lutea' },
-                { label: 'Menstruação', value: 'menstrual' }
-              ]},
-              { label: 'Categoria', name: 'categoria', widget: 'string' },
-              { label: 'Tempo de leitura (min)', name: 'readTime', widget: 'number' },
-              { label: 'Destaque na homepage', name: 'featured', widget: 'boolean', default: false },
-              { label: 'Conteúdo', name: 'body', widget: 'markdown' }
-            ]
-          }
-        ]
-      }
-    });
-
-    window.addEventListener('message', (e) => {
-      if (e.data && typeof e.data === 'string' && e.data.startsWith('authorization:github:success:')) {
-        const data = JSON.parse(e.data.replace('authorization:github:success:', ''));
-        localStorage.setItem('netlify-cms-user', JSON.stringify({
-          token: data.token,
-          provider: 'github'
-        }));
-        window.location.reload();
-      }
-    });
-  </script>
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <link rel="cms-config-url" type="application/json" href="/admin/config.json">
 </body>
 </html>

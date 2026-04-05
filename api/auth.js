@@ -1,43 +1,51 @@
 export default async function handler(req, res) {
-  const { code } = req.query;
+  const { code, provider } = req.query;
 
-  if (!code) {
-    return res.status(400).json({ error: 'No code provided' });
-  }
-
-  const response = await fetch('https://github.com/login/oauth/access_token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({
+  // Início do fluxo — redireciona para o GitHub
+  if (provider === 'github' && !code) {
+    const params = new URLSearchParams({
       client_id: process.env.GITHUB_CLIENT_ID,
-      client_secret: process.env.GITHUB_CLIENT_SECRET,
-      code,
-    }),
-  });
-
-  const data = await response.json();
-
-  if (data.error) {
-    return res.status(400).json({ error: data.error });
+      scope: 'repo',
+      redirect_uri: 'https://coconut-yoga.vercel.app/api/auth',
+    });
+    return res.redirect(`https://github.com/login/oauth/authorize?${params}`);
   }
 
-  const script = `
-    <script>
-      const message = {
-        token: "${data.access_token}",
-        provider: "github"
-      };
-      window.opener.postMessage(
-        'authorization:github:success:' + JSON.stringify(message),
-        '*'
-      );
-      window.close();
-    </script>
-  `;
+  // Callback — troca o code pelo token
+  if (code) {
+    const response = await fetch('https://github.com/login/oauth/access_token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        client_id: process.env.GITHUB_CLIENT_ID,
+        client_secret: process.env.GITHUB_CLIENT_SECRET,
+        code,
+        redirect_uri: 'https://coconut-yoga.vercel.app/api/auth',
+      }),
+    });
 
-  res.setHeader('Content-Type', 'text/html');
-  res.send(script);
+    const data = await response.json();
+
+    if (data.error) {
+      return res.status(400).send(`<script>window.opener.postMessage('authorization:github:error:${data.error}','*');window.close();</script>`);
+    }
+
+    return res.send(`
+      <script>
+        window.opener.postMessage(
+          'authorization:github:success:' + JSON.stringify({
+            token: "${data.access_token}",
+            provider: "github"
+          }),
+          '*'
+        );
+        window.close();
+      </script>
+    `);
+  }
+
+  res.status(400).json({ error: 'Invalid request' });
 }

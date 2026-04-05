@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* ─── TOKENS ─── */
+:root {
+  --cream:       #FDFAF5;
+  --cream-dark:  #F5EFE3;
+  --sand:        #E8DDD0;
+  --terra:       #C4845A;
+  --terra-light: #D9A07A;
+  --terra-dark:  #9E6440;
+  --sage:        #7A9E7E;
+  --sage-light:  #B5CEB7;
+  --sage-dark:   #4E7552;
+  --lavender:    #9B84B8;
+  --rose:        #C47A7A;
+  --bark:        #2C2520;
+  --bark-mid:    #6B5C52;
+  --bark-light:  #9A8A80;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  24px;
+  --radius-pill: 100px;
+
+  --max-w: 1100px;
+  --gap:   clamp(16px, 3vw, 32px);
+}
+
+/* ─── FASE COLORS ─── */
+.fase-folicular  { --fase-color: var(--sage);     --fase-bg: #EBF2EC; }
+.fase-ovulatoria { --fase-color: var(--terra);    --fase-bg: #F5EBE3; }
+.fase-lutea      { --fase-color: var(--lavender); --fase-bg: #EDE8F5; }
+.fase-menstrual  { --fase-color: var(--rose);     --fase-bg: #F5E8E8; }
+
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--bark);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── TYPOGRAPHY ─── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+
+p { color: var(--bark-mid); line-height: 1.8; }
+
+/* ─── LAYOUT ─── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 60px);
+}
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--terra);
+  color: white;
+}
+.btn-primary:hover { background: var(--terra-dark); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--bark);
+  border: 1px solid var(--sand);
+}
+.btn-outline:hover { border-color: var(--bark); }
+
+.btn-dark {
+  background: var(--bark);
+  color: var(--cream);
+}
+.btn-dark:hover { background: #1a1512; transform: translateY(-1px); }
+
+/* ─── FASE BADGE ─── */
+.fase-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--fase-bg);
+  color: var(--fase-color);
+}
+
+/* ─── ARTICLE CARD ─── */
+.article-card {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.article-card:hover {
+  border-color: var(--terra-light);
+  transform: translateY(-2px);
+}
+.article-card__img {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fase-bg);
+}
+.article-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.article-card__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--bark);
+  line-height: 1.3;
+}
+.article-card__meta { font-size: 12px; color: var(--bark-light); margin-top: auto; padding-top: 12px; }
+
+/* ─── PROSE (artigos) ─── */
+.prose {
+  max-width: 68ch;
+  margin-inline: auto;
+}
+.prose h2 { margin: 2.5rem 0 1rem; }
+.prose h3 { margin: 2rem 0 0.75rem; }
+.prose p  { margin-bottom: 1.4rem; }
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.4rem; }
+.prose li { margin-bottom: 0.4rem; color: var(--bark-mid); }
+.prose blockquote {
+  border-left: 3px solid var(--terra-light);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: var(--cream-dark);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--bark);
+}
+.prose strong { color: var(--bark); font-weight: 500; }
+
+/* ─── NOTICE BAR ─── */
+.notice-bar {
+  background: #EAF4EE;
+  border-top: 1px solid #C3DEC9;
+  border-bottom: 1px solid #C3DEC9;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #3A6B45;
+  text-align: center;
+}
+
+/* ─── DIVIDER ─── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--sand);
+  margin: 0;
+}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up-2 { animation: fadeUp 0.6s 0.15s ease both; }
+.fade-up-3 { animation: fadeUp 0.6s 0.3s ease both; }

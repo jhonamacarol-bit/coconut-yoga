@@ -1,0 +1,356 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const featured = posts.filter(p => p.data.featured).slice(0, 3);
+const recent   = posts.sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 6);
+
+const faseLabel: Record<string, string> = {
+  folicular:  'fase folicular',
+  ovulatoria: 'ovulação',
+  lutea:      'fase lútea',
+  menstrual:  'menstruação',
+};
+---
+
+<Base>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text fade-up">
+        <span class="eyebrow">saúde pelo seu ritmo</span>
+        <h1>seu corpo tem um <em>ciclo.</em><br>sua comida também.</h1>
+        <p>Aqui você aprende a se alimentar de acordo com cada fase do seu ciclo menstrual — sem dietas restritivas, sem contagem de calorias, sem culpa.</p>
+        <div class="hero-actions">
+          <a href="/guia-gratuito" class="btn btn-primary">quero o guia gratuito</a>
+          <a href="/blog" class="btn btn-outline">ler os artigos</a>
+        </div>
+      </div>
+      <div class="hero-cards fade-up-2">
+        <div class="phase-card phase-card--folicular">
+          <span class="fase-badge fase-folicular">folicular · sem 1–2</span>
+          <p>Energia alta, metabolismo acelerado. Momento ideal para explorar receitas novas e alimentos mais leves.</p>
+        </div>
+        <div class="phase-card phase-card--lutea">
+          <span class="fase-badge fase-lutea">lútea · sem 3–4</span>
+          <p>Vontade de carboidratos é real e tem explicação. Saiba o que comer para aliviar a TPM naturalmente.</p>
+        </div>
+        <div class="phase-card phase-card--menstrual">
+          <span class="fase-badge fase-menstrual">menstruação</span>
+          <p>Anti-inflamatórios, ferro e autocuidado. Comer bem aqui muda tudo para o próximo ciclo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">↓</div>
+  </section>
+
+  <!-- ── FEATURED ARTICLES ── -->
+  {featured.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>leituras para você</h2>
+          <a href="/blog" class="section-link">ver todos →</a>
+        </div>
+        <div class="cards-grid cards-grid--3">
+          {featured.map(post => (
+            <a href={`/blog/${post.slug}`} class={`article-card fase-${post.data.fase}`}>
+              <div class="article-card__img">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="18" fill="var(--fase-color)" opacity="0.15"/>
+                  <circle cx="24" cy="24" r="10" fill="var(--fase-color)" opacity="0.25"/>
+                  <circle cx="24" cy="24" r="4"  fill="var(--fase-color)" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="article-card__body">
+                <span class="fase-badge">{faseLabel[post.data.fase]}</span>
+                <div class="article-card__title">{post.data.title}</div>
+                <p style="font-size:13px; margin:0;">{post.data.description}</p>
+                <div class="article-card__meta">{post.data.readTime} min · {post.data.categoria}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── CICLO GUIDE ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="ciclo-grid">
+        <div class="ciclo-text">
+          <span class="eyebrow">entenda o ciclo</span>
+          <h2>quatro fases, quatro formas de se nutrir</h2>
+          <p>O seu ciclo menstrual não é só menstruação. São quatro fases distintas, cada uma com necessidades hormonais, energéticas e nutricionais diferentes.</p>
+          <a href="/ciclo" class="btn btn-primary" style="margin-top:16px">explorar as fases</a>
+        </div>
+        <div class="ciclo-phases">
+          {[
+            { fase: 'folicular',  num: '01', nome: 'Folicular',  dias: 'dias 1–13', cor: 'sage' },
+            { fase: 'ovulatoria', num: '02', nome: 'Ovulatória', dias: 'dia 14',    cor: 'terra' },
+            { fase: 'lutea',      num: '03', nome: 'Lútea',      dias: 'dias 15–28', cor: 'lavender' },
+            { fase: 'menstrual',  num: '04', nome: 'Menstrual',  dias: 'dias 1–5',  cor: 'rose' },
+          ].map(f => (
+            <a href={`/ciclo#${f.fase}`} class={`ciclo-item fase-${f.fase}`}>
+              <span class="ciclo-num">{f.num}</span>
+              <div>
+                <strong>{f.nome}</strong>
+                <small>{f.dias}</small>
+              </div>
+              <span class="ciclo-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MANIFESTO ── -->
+  <section class="manifesto">
+    <div class="container manifesto-inner">
+      <div class="manifesto-text">
+        <h2>um espaço que<br>não te <em>julga.</em></h2>
+        <p>Criado por quem entende que a relação com a comida pode ser complicada. Aqui a gente fala de saúde sem comparações, sem antes e depois, sem números que diminuem você.</p>
+      </div>
+      <div class="manifesto-values">
+        {[
+          { titulo: 'sem linguagem de dieta', texto: 'Nunca falamos em "eliminar", "emagrecer" ou culpa. A comida é aliada, não inimiga.' },
+          { titulo: 'baseado no ciclo, não no espelho', texto: 'A referência é como você se sente — sua energia, seu humor, seu conforto.' },
+          { titulo: 'feito com cuidado', texto: 'Cada artigo é pensado considerando quem já sofreu com o próprio corpo.' },
+        ].map(v => (
+          <div class="value-pill">
+            <strong>{v.titulo}</strong>
+            <p>{v.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RECENT POSTS ── -->
+  {recent.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>artigos recentes</h2>
+          <a href="/blog" class="section-link">ver todos →</a>
+        </div>
+        <div class="cards-grid cards-grid--3">
+          {recent.map(post => (
+            <a href={`/blog/${post.slug}`} class={`article-card fase-${post.data.fase}`}>
+              <div class="article-card__img">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="20" r="14" fill="var(--fase-color)" opacity="0.18"/>
+                  <circle cx="20" cy="20" r="7"  fill="var(--fase-color)" opacity="0.35"/>
+                </svg>
+              </div>
+              <div class="article-card__body">
+                <span class="fase-badge">{faseLabel[post.data.fase]}</span>
+                <div class="article-card__title">{post.data.title}</div>
+                <div class="article-card__meta">{post.data.readTime} min · {post.data.categoria}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ── NEWSLETTER CTA ── -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-box">
+        <div class="newsletter-box__text">
+          <h2>receba conteúdo<br>com <em>carinho</em></h2>
+          <p>Uma vez por semana, um e-mail sobre o seu ciclo, alimentação e bem-estar. Sem spam, sem pressão.</p>
+        </div>
+        <form class="newsletter-box__form" action="#" method="post">
+          <input type="text" placeholder="seu nome" required />
+          <input type="email" placeholder="seu e-mail" required />
+          <button type="submit" class="btn btn-primary">quero receber</button>
+          <small>cancele quando quiser · seus dados são seus</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+/* HERO */
+.hero {
+  padding: clamp(60px, 10vw, 120px) 0 clamp(40px, 6vw, 80px);
+  position: relative;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 16px;
+}
+.hero-text h1 em { color: var(--terra); font-style: italic; }
+.hero-text p { margin: 20px 0 32px; max-width: 44ch; font-size: 15px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-cards { display: flex; flex-direction: column; gap: 12px; }
+.phase-card {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+.phase-card:hover { border-color: var(--terra-light); }
+.phase-card p { font-size: 13px; margin: 0; }
+
+.hero-scroll-hint {
+  text-align: center;
+  margin-top: 48px;
+  color: var(--bark-light);
+  font-size: 20px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* SECTIONS */
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+.section--tinted { background: var(--cream-dark); }
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+.section-link { font-size: 13px; color: var(--terra); font-weight: 500; }
+.section-link:hover { text-decoration: underline; }
+
+/* CARDS GRID */
+.cards-grid { display: grid; gap: 20px; }
+.cards-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+/* CICLO */
+.ciclo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.ciclo-text h2 em { color: var(--terra); font-style: italic; }
+.ciclo-text p { margin: 16px 0; }
+.ciclo-phases { display: flex; flex-direction: column; gap: 8px; }
+.ciclo-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.ciclo-item:hover {
+  border-color: var(--fase-color);
+  transform: translateX(4px);
+}
+.ciclo-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--fase-color);
+  opacity: 0.6;
+  min-width: 36px;
+}
+.ciclo-item strong { display: block; font-size: 14px; font-weight: 500; color: var(--bark); }
+.ciclo-item small { font-size: 11px; color: var(--bark-light); }
+.ciclo-arrow { margin-left: auto; color: var(--bark-light); font-size: 14px; }
+
+/* MANIFESTO */
+.manifesto {
+  background: var(--bark);
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+.manifesto-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+.manifesto-text h2 { color: var(--cream); }
+.manifesto-text h2 em { color: var(--terra-light); font-style: italic; }
+.manifesto-text p { color: var(--bark-light); margin-top: 16px; }
+.manifesto-values { display: flex; flex-direction: column; gap: 12px; }
+.value-pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+.value-pill strong { display: block; font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 6px; }
+.value-pill p { font-size: 13px; color: var(--bark-light); margin: 0; }
+
+/* NEWSLETTER */
+.newsletter-section { background: var(--cream-dark); }
+.newsletter-box {
+  background: white;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.newsletter-box__text h2 em { color: var(--terra); font-style: italic; }
+.newsletter-box__text p { margin-top: 12px; }
+.newsletter-box__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.newsletter-box__form input {
+  padding: 12px 18px;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--bark);
+  background: var(--cream);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-box__form input:focus { border-color: var(--terra); }
+.newsletter-box__form input::placeholder { color: var(--bark-light); }
+.newsletter-box__form .btn { align-self: flex-start; }
+.newsletter-box__form small { font-size: 11px; color: var(--bark-light); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-cards { display: grid; grid-template-columns: 1fr 1fr; }
+  .ciclo-grid { grid-template-columns: 1fr; }
+  .manifesto-inner { grid-template-columns: 1fr; }
+  .newsletter-box { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cards-grid--3 { grid-template-columns: 1fr; }
+  .hero-cards { grid-template-columns: 1fr; }
+  .section-header { flex-direction: column; gap: 8px; }
+}
+</style>

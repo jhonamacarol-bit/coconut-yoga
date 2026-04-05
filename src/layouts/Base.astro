@@ -1,0 +1,283 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Coconut Yoga — saúde pelo seu ritmo',
+  description = 'Aprenda a se alimentar de acordo com cada fase do seu ciclo menstrual, sem dietas restritivas e sem culpa.',
+  image = '/og-image.jpg',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="container nav-inner">
+      <a href="/" class="nav-logo">
+        coconut <span>yoga</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/ciclo">ciclo</a></li>
+        <li><a href="/alimentacao">alimentação</a></li>
+        <li><a href="/corpo">corpo</a></li>
+        <li><a href="/sobre">sobre</a></li>
+      </ul>
+      <a href="/guia-gratuito" class="btn btn-dark nav-cta">guia gratuito</a>
+      <button class="nav-burger" aria-label="Menu" id="burger">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- NOTICE -->
+  <div class="notice-bar">
+    Este espaço não fala em peso, calorias ou dietas — só em como se sentir bem no seu corpo.
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">coconut <span>yoga</span></div>
+        <p>Um espaço gentil para aprender sobre o seu corpo<br>sem comparações, sem culpa.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <strong>conteúdo</strong>
+          <a href="/ciclo">fase folicular</a>
+          <a href="/ciclo">fase lútea</a>
+          <a href="/ciclo">menstruação</a>
+          <a href="/alimentacao">alimentação</a>
+        </div>
+        <div>
+          <strong>sobre</strong>
+          <a href="/sobre">nossa história</a>
+          <a href="/contato">contato</a>
+          <a href="/privacidade">privacidade</a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <p><em>receba conteúdo<br>com carinho</em></p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" placeholder="seu e-mail" required />
+          <button type="submit" class="btn btn-primary">entrar</button>
+        </form>
+        <small>sem spam. cancele quando quiser.</small>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 Coconut Yoga · feito com cuidado</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile burger menu
+    const burger = document.getElementById('burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger?.addEventListener('click', () => {
+      navLinks?.classList.toggle('open');
+      burger.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
+
+<style>
+/* ── Header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 250, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--sand);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 60px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--bark);
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--terra); }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin-left: auto;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--bark-mid);
+  transition: color 0.15s;
+  letter-spacing: 0.2px;
+}
+.nav-links a:hover { color: var(--bark); }
+.nav-cta { margin-left: 8px; padding: 9px 20px; font-size: 12px; }
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+.nav-burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--bark);
+  transition: all 0.25s;
+}
+.nav-burger.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.nav-burger.active span:nth-child(2) { opacity: 0; }
+.nav-burger.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--bark);
+  color: var(--cream);
+  margin-top: 80px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr;
+  gap: 48px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+.footer-brand .nav-logo { color: var(--cream); margin-bottom: 12px; }
+.footer-brand .nav-logo span { color: var(--terra-light); }
+.footer-brand p { font-size: 13px; color: var(--bark-light); line-height: 1.7; }
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+}
+.footer-links > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links strong {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--bark-light);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.footer-links a { font-size: 13px; color: #B5A99E; transition: color 0.15s; }
+.footer-links a:hover { color: var(--cream); }
+
+.footer-newsletter p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.07);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-form input::placeholder { color: var(--bark-light); }
+.newsletter-form input:focus { border-color: var(--terra-light); }
+.newsletter-form .btn { padding: 10px 18px; font-size: 12px; flex-shrink: 0; }
+.footer-newsletter small { font-size: 11px; color: var(--bark-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 16px 0;
+  font-size: 12px;
+  color: var(--bark-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 20px 24px 24px;
+    border-bottom: 1px solid var(--sand);
+    gap: 18px;
+    margin-left: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+  .nav-inner { position: relative; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-links { flex-wrap: wrap; }
+}
+</style>

@@ -170,12 +170,14 @@ const faseLabel: Record<string, string> = {
           <h2>receba conteúdo<br>com <em>carinho</em></h2>
           <p>Uma vez por semana, um e-mail sobre o seu ciclo, alimentação e bem-estar. Sem spam, sem pressão.</p>
         </div>
-        <form class="newsletter-box__form" action="#" method="post">
-          <input type="text" placeholder="seu nome" required />
-          <input type="email" placeholder="seu e-mail" required />
-          <button type="submit" class="btn btn-primary">quero receber</button>
-          <small>cancele quando quiser · seus dados são seus</small>
-        </form>
+        <form class="newsletter-box__form" method="POST" action="https://405d3274.sibforms.com/serve/MUIFAN8Y2aHduBvnlCJPJExB7vCpgHHtoxazlU3xVWZL9cOZ-9G2aPhr1e5EMpCclm01OOatFCI0iaR415HvZkMYJDUfvMcGN4c3-fTySVMjGPta6f_bVK62GblFeq-1E82_fwP_oLFNo9HWMOsYxs5NovgNrDEA-JUhQ1qwK8LZmUIt1La_XCXuFCEkMYITDX8C1d-uWzqOuQNrqQ==" data-type="subscription">
+  <input type="text" placeholder="seu nome" name="FIRSTNAME" />
+  <input type="email" placeholder="seu e-mail" name="EMAIL" required />
+  <button type="submit" class="btn btn-primary">quero receber</button>
+  <input type="text" name="email_address_check" value="" style="display:none">
+  <input type="hidden" name="locale" value="pt">
+  <small>cancele quando quiser · seus dados são seus</small>
+</form>
       </div>
     </div>
   </section>

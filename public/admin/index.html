@@ -14,10 +14,12 @@
     CMS.init({
       config: {
         backend: {
-          name: 'github',
-          repo: 'jhonamacarol-bit/coconut-yoga',
-          branch: 'main'
-        },
+  name: 'github',
+  repo: 'jhonamacarol-bit/coconut-yoga',
+  branch: 'main',
+  base_url: 'https://coconut-yoga.vercel.app',
+  auth_endpoint: 'api/auth'
+},
         media_folder: 'public/images',
         public_folder: '/images',
         collections: [

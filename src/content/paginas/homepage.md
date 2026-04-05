@@ -1,7 +1,7 @@
 ---
-heroTag: saúde pelo seu ritmo
-heroTitulo: seu corpo tem um ciclo. sua comida também.
-heroDescricao: Aqui você aprende a se alimentar de acordo com cada fase do seu ciclo menstrual, sem dietas restritivas, sem contagem de calorias, sem culpa.
+heroTag: entre os ciclos do meu corpo e da lua
+heroTitulo: eu organizo minha rotina observando os ciclos do meu corpo e usando a lua como referência de ritmo.
+heroDescricao: nem todo dia pede a mesma coisa. quando eu comecei a respeitar isso, minha rotina começou a fazer sentido.
 heroBotaoPrimario: quero o guia gratuito
 heroBotaoSecundario: ler os artigos
 card1Fase: folicular · sem 1-2

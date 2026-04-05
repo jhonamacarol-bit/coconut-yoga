@@ -14,12 +14,12 @@
     CMS.init({
       config: {
         backend: {
-  name: 'github',
-  repo: 'jhonamacarol-bit/coconut-yoga',
-  branch: 'main',
-  base_url: 'https://coconut-yoga.vercel.app',
-  auth_endpoint: 'api/auth'
-},
+          name: 'github',
+          repo: 'jhonamacarol-bit/coconut-yoga',
+          branch: 'main',
+          base_url: 'https://coconut-yoga.vercel.app',
+          auth_endpoint: 'api/auth'
+        },
         media_folder: 'public/images',
         public_folder: '/images',
         collections: [
@@ -46,6 +46,17 @@
             ]
           }
         ]
+      }
+    });
+
+    window.addEventListener('message', (e) => {
+      if (e.data && typeof e.data === 'string' && e.data.startsWith('authorization:github:success:')) {
+        const data = JSON.parse(e.data.replace('authorization:github:success:', ''));
+        localStorage.setItem('netlify-cms-user', JSON.stringify({
+          token: data.token,
+          provider: 'github'
+        }));
+        window.location.reload();
       }
     });
   </script>

@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: jhonamacarol-bit/coconut-yoga
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Artigos
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Descrição, name: description, widget: string }
+      - { label: Data, name: pubDate, widget: datetime }
+      - label: Fase
+        name: fase
+        widget: select
+        options:
+          - { label: Fase Folicular, value: folicular }
+          - { label: Ovulação, value: ovulatoria }
+          - { label: Fase Lútea, value: lutea }
+          - { label: Menstruação, value: menstrual }
+      - { label: Categoria, name: categoria, widget: string }
+      - { label: Tempo de leitura (min), name: readTime, widget: number }
+      - { label: Destaque na homepage, name: featured, widget: boolean, default: false }
+      - { label: Conteúdo, name: body, widget: markdown }

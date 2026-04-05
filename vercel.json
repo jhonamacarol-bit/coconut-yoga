@@ -2,12 +2,9 @@
   "name": "coconut-yoga",
   "type": "module",
   "version": "0.0.1",
-<<<<<<< HEAD
-=======
   "engines": {
     "node": ">=18.0.0"
   },
->>>>>>> 30d6ff9ac1042e19dae55f7745f7cfebee57b863
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -17,8 +14,4 @@
     "astro": "^4.15.0",
     "@astrojs/mdx": "^3.1.0"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 30d6ff9ac1042e19dae55f7745f7cfebee57b863

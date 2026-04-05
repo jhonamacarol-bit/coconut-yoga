@@ -23,6 +23,42 @@
         { "label": "Destaque", "name": "featured", "widget": "boolean", "default": false },
         { "label": "Conteúdo", "name": "body", "widget": "markdown" }
       ]
+    },
+    {
+      "name": "paginas",
+      "label": "Páginas",
+      "files": [
+        {
+          "name": "homepage",
+          "label": "Homepage",
+          "file": "src/content/paginas/homepage.md",
+          "fields": [
+            { "label": "Tag do hero", "name": "heroTag", "widget": "string" },
+            { "label": "Título do hero", "name": "heroTitulo", "widget": "string" },
+            { "label": "Descrição do hero", "name": "heroDescricao", "widget": "text" },
+            { "label": "Botão primário", "name": "heroBotaoPrimario", "widget": "string" },
+            { "label": "Botão secundário", "name": "heroBotaoSecundario", "widget": "string" },
+            { "label": "Card 1 — fase", "name": "card1Fase", "widget": "string" },
+            { "label": "Card 1 — texto", "name": "card1Texto", "widget": "text" },
+            { "label": "Card 2 — fase", "name": "card2Fase", "widget": "string" },
+            { "label": "Card 2 — texto", "name": "card2Texto", "widget": "text" },
+            { "label": "Card 3 — fase", "name": "card3Fase", "widget": "string" },
+            { "label": "Card 3 — texto", "name": "card3Texto", "widget": "text" },
+            { "label": "Seção ciclo — título", "name": "secaoCicloTitulo", "widget": "string" },
+            { "label": "Seção ciclo — descrição", "name": "secaoCicloDescricao", "widget": "text" },
+            { "label": "Manifesto — título", "name": "manifestoTitulo", "widget": "string" },
+            { "label": "Manifesto — descrição", "name": "manifestoDescricao", "widget": "text" },
+            { "label": "Valor 1 — título", "name": "valor1Titulo", "widget": "string" },
+            { "label": "Valor 1 — texto", "name": "valor1Texto", "widget": "text" },
+            { "label": "Valor 2 — título", "name": "valor2Titulo", "widget": "string" },
+            { "label": "Valor 2 — texto", "name": "valor2Texto", "widget": "text" },
+            { "label": "Valor 3 — título", "name": "valor3Titulo", "widget": "string" },
+            { "label": "Valor 3 — texto", "name": "valor3Texto", "widget": "text" },
+            { "label": "Newsletter — título", "name": "newsletterTitulo", "widget": "string" },
+            { "label": "Newsletter — descrição", "name": "newsletterDescricao", "widget": "text" }
+          ]
+        }
+      ]
     }
   ]
 }

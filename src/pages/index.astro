@@ -24,7 +24,8 @@ const faseLabel: Record<string, string> = {
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text fade-up">
-        <span class="eyebrow">{h.heroTag}</span>
+        <img src="/veadinho.png" alt="" class="hero-animal" />
+<span class="eyebrow">{h.heroTag}</span>
 <h1>{h.heroTitulo}</h1>
 <p>{h.heroDescricao}</p>
 <div class="hero-actions">
@@ -375,5 +376,10 @@ const faseLabel: Record<string, string> = {
   border-radius: var(--radius-pill);
   font-size: 14px;
   margin-bottom: 24px;
+}
+.hero-animal {
+  width: 80px;
+  margin-bottom: 8px;
+  display: block;
 }
 </style>

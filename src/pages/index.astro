@@ -115,14 +115,15 @@ const faseLabel: Record<string, string> = {
   <section class="manifesto">
     <div class="container manifesto-inner">
       <div class="manifesto-text">
-        <h2>um espaço que<br>não te <em>julga.</em></h2>
-        <p>Criado por quem entende que a relação com a comida pode ser complicada. Aqui a gente fala de saúde sem comparações, sem antes e depois, sem números que diminuem você.</p>
+       <h2>um lugar para quem sente demais</h2>
+<p>eu não acredito em dieta. acredito em observar, ajustar e repetir o que funciona. isso muda a forma como você se vê, se cuida e se entende.</p>
       </div>
       <div class="manifesto-values">
-        {[
-          { titulo: 'sem linguagem de dieta', texto: 'Nunca falamos em "eliminar", "emagrecer" ou culpa. A comida é aliada, não inimiga.' },
-          { titulo: 'baseado no ciclo, não no espelho', texto: 'A referência é como você se sente — sua energia, seu humor, seu conforto.' },
-          { titulo: 'feito com cuidado', texto: 'Cada artigo é pensado considerando quem já sofreu com o próprio corpo.' },
+       {[
+  { titulo: 'ciclos', texto: 'Aqui eu compartilho o meu estilo de vida e tudo o que me influencia, respeitando os meus ciclos, fases e a forma como a minha energia muda ao longo do tempo. Eu acredito que a vida não é linear, e que entender esses movimentos, do corpo, da mente e até da lua, muda completamente a forma como a gente se organiza e se trata.' },
+  { titulo: 'alimentação', texto: 'Energia, fome e humor caminham juntos. Para mim, um corpo bonito é um corpo saudável. A forma como eu me alimento não vem de regras rígidas, mas de uma escuta constante do meu corpo, entendendo o que me sustenta, o que me dá energia e o que me faz sentir bem de verdade. Eu acredito em uma alimentação simples, consistente e funcional, que respeita o momento, evita excessos e constrói uma base sólida ao longo do tempo.' },
+  { titulo: 'diário pessoal', texto: 'Aqui, você e eu nos acompanhamos. Eu compartilho meus processos de forma real, os ajustes, os aprendizados, as fases boas e as que exigem mais de mim, porque evoluir é sobre continuidade. A ideia é crescer juntas, com mais consciência, mais presença e construindo uma rotina que faça sentido na prática, não só na teoria.' },
+]}
         ].map(v => (
           <div class="value-pill">
             <strong>{v.titulo}</strong>
@@ -138,7 +139,7 @@ const faseLabel: Record<string, string> = {
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2>artigos recentes</h2>
+          <h2>últimos textos</h2>
           <a href="/blog" class="section-link">ver todos →</a>
         </div>
         <div class="cards-grid cards-grid--3">
@@ -170,9 +171,14 @@ const faseLabel: Record<string, string> = {
     <div class="container">
       <div class="newsletter-box">
         <div class="newsletter-box__text">
-          <h2>vamos nos conectar?</h2>
-<p>e-mails com o que eu estou testando, ajustando e mantendo na minha rotina.</p>
-        </div>
+  <h2>vamos nos conectar?</h2>
+  <p class="newsletter-sub">
+    e-mails com o que eu estou testando, ajustando e mantendo na minha rotina. sem filtro, sem fórmula.
+  </p>
+  <p class="newsletter-small">
+    sem spam. sem insistência. por aqui eu falo com mais calma.
+  </p>
+</div>
         <form class="newsletter-box__form" method="POST" action="https://405d3274.sibforms.com/serve/MUIFAN8Y2aHduBvnlCJPJExB7vCpgHHtoxazlU3xVWZL9cOZ-9G2aPhr1e5EMpCclm01OOatFCI0iaR415HvZkMYJDUfvMcGN4c3-fTySVMjGPta6f_bVK62GblFeq-1E82_fwP_oLFNo9HWMOsYxs5NovgNrDEA-JUhQ1qwK8LZmUIt1La_XCXuFCEkMYITDX8C1d-uWzqOuQNrqQ==" data-type="subscription">
   <input type="text" placeholder="seu nome" name="FIRSTNAME" />
   <input type="email" placeholder="seu e-mail" name="EMAIL" required />

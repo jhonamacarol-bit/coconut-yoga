@@ -2,20 +2,20 @@
 
 /* ─── TOKENS ─── */
 :root {
-  --cream:       #FDFAF5;
-  --cream-dark:  #F5EFE3;
-  --sand:        #E8DDD0;
-  --terra:       #C4845A;
-  --terra-light: #D9A07A;
-  --terra-dark:  #9E6440;
+  --cream:       #FDF8F8;
+  --cream-dark:  #F9EEEE;
+  --sand:        #EDD8D8;
+  --terra:       #C4727A;
+  --terra-light: #D99AA0;
+  --terra-dark:  #9E4F56;
   --sage:        #7A9E7E;
   --sage-light:  #B5CEB7;
   --sage-dark:   #4E7552;
-  --lavender:    #9B84B8;
-  --rose:        #C47A7A;
-  --bark:        #2C2520;
-  --bark-mid:    #6B5C52;
-  --bark-light:  #9A8A80;
+  --lavender:    #B89BB8;
+  --rose:        #D4A0A0;
+  --bark:        #2C2020;
+  --bark-mid:    #6B4F52;
+  --bark-light:  #9A8082;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Jost', system-ui, sans-serif;

@@ -5,8 +5,8 @@ heroDescricao: a minha vida funciona de forma mais intuitiva, artística e sens�
 heroBotaoPrimario: quero o guia gratuito
 heroBotaoSecundario: ler os artigos
 card1Fase: folicular · sem 1-2
-card1Texto: Energia alta, metabolismo acelerado. Momento ideal para explorar receitas novas e alimentos mais leves.
-card2Fase: lútea · sem 3-4
+card1Texto: esses são dias em que eu sinto mais leveza no corpo e mais clareza na mente. eu tenho vontade de me movimentar, escrever, organizar ideias e começar coisas novas. parece que tudo flui com mais facilidade. hormonalmente, é quando o estrogênio começa a subir, trazendo mais energia, foco e disposição. é uma fase de expansão, mas sem pressão. na alimentação, eu naturalmente prefiro coisas mais leves e frescas. é quando eu gosto de testar receitas novas e variar um pouco mais.
+card2Fase: ovulatória - sem 2-3
 card2Texto: Vontade de carboidratos é real e tem explicação. Saiba o que comer para aliviar a TPM naturalmente.
 card3Fase: menstruação
 card3Texto: Anti-inflamatórios, ferro e autocuidado. Comer bem aqui muda tudo para o próximo ciclo.

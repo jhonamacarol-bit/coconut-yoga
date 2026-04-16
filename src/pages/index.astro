@@ -203,8 +203,6 @@ const faseLabel: Record<string, string> = {
     </div>
   </div>
 </section>
-    </div>
-  </section>
 <script>
   if (new URLSearchParams(window.location.search).get('inscrita')) {
     document.getElementById('inscrita-msg').style.display = 'block';
@@ -249,9 +247,15 @@ const faseLabel: Record<string, string> = {
   gap: 10px;
   transition: all 0.25s ease;
 }
+.fase-ovulatoria {
+  color: var(--terra);
+}
+
+.phase-card--ovulatoria {
+  border-color: rgba(210, 140, 90, 0.2);
 .phase-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 .phase-card:hover { border-color: var(--terra-light); }
 .phase-card p { font-size: 13px; margin: 0; }

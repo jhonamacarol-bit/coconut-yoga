@@ -1,7 +1,7 @@
 ---
-heroTag: entre os ciclos do meu corpo e da lua
-heroTitulo: eu organizo minha rotina observando os ciclos do meu corpo e usando a lua como referência de ritmo.
-heroDescricao: nem todo dia pede a mesma coisa. quando eu comecei a respeitar isso, minha rotina começou a fazer sentido.
+heroTag: natureza feminina e lua
+heroTitulo: eu vivo entre os ciclos do meu corpo e da lua
+heroDescricao: a minha vida funciona de forma mais intuitiva, artística e sensível. ao longo dos anos, eu percebi que não funciono exatamente igual todos os dias. quando eu comecei a respeitar isso, tudo ficou mais leve e natural.
 heroBotaoPrimario: quero o guia gratuito
 heroBotaoSecundario: ler os artigos
 card1Fase: folicular · sem 1-2

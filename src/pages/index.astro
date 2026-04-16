@@ -30,20 +30,18 @@ const faseLabel: Record<string, string> = {
 <div class="hero-actions">
   <a href="/ciclo" class="btn btn-primary">ver ciclos e alimentação</a>
 </div>
-      </div>
-      <div class="hero-cards fade-up-2">
-        <div class="phase-card phase-card--folicular">
-          <span class="fase-badge fase-folicular">folicular · sem 1–2</span>
-          <p>Energia alta, metabolismo acelerado. Momento ideal para explorar receitas novas e alimentos mais leves.</p>
-        </div>
+      <div class="phase-card phase-card--folicular">
+  <span class="fase-badge fase-folicular">folicular · sem 1–2</span>
+  <p>esses são dias em que eu sinto mais leveza no corpo e mais clareza na mente. tenho vontade de me movimentar, escrever e começar coisas novas. tudo flui com mais facilidade.</p>
+</div>
         <div class="phase-card phase-card--lutea">
-          <span class="fase-badge fase-lutea">lútea · sem 3–4</span>
-          <p>Vontade de carboidratos é real e tem explicação. Saiba o que comer para aliviar a TPM naturalmente.</p>
-        </div>
-        <div class="phase-card phase-card--menstrual">
-          <span class="fase-badge fase-menstrual">menstruação</span>
-          <p>Anti-inflamatórios, ferro e autocuidado. Comer bem aqui muda tudo para o próximo ciclo.</p>
-        </div>
+  <span class="fase-badge fase-lutea">lútea · sem 3–4</span>
+  <p>nessa fase eu começo a desacelerar. fico mais introspectiva e o corpo pede mais comida, mais conforto e mais pausa. eu ajusto, não brigo com isso.</p>
+</div>
+       <div class="phase-card phase-card--menstrual">
+  <span class="fase-badge fase-menstrual">menstruação</span>
+  <p>aqui é pausa. minha energia diminui e eu simplifico tudo. comida quente, rotina leve e mais presença comigo.</p>
+</div>
       </div>
     </div>
     <div class="hero-scroll-hint">↓</div>
@@ -165,24 +163,31 @@ const faseLabel: Record<string, string> = {
 
   <!-- ── NEWSLETTER CTA ── -->
   <section class="section newsletter-section">
-<div class="newsletter-box__text">
-  <h2>vamos nos conectar?</h2>
-  <p class="newsletter-sub">
-    e-mails com o que eu estou testando, ajustando e mantendo na minha rotina. sem filtro, sem fórmula.
-  </p>
-  <p class="newsletter-small">
-    sem spam. sem insistência. por aqui eu falo com mais calma.
-  </p>
-</div>
-        <form class="newsletter-box__form" method="POST" action="https://405d3274.sibforms.com/serve/MUIFAN8Y2aHduBvnlCJPJExB7vCpgHHtoxazlU3xVWZL9cOZ-9G2aPhr1e5EMpCclm01OOatFCI0iaR415HvZkMYJDUfvMcGN4c3-fTySVMjGPta6f_bVK62GblFeq-1E82_fwP_oLFNo9HWMOsYxs5NovgNrDEA-JUhQ1qwK8LZmUIt1La_XCXuFCEkMYITDX8C1d-uWzqOuQNrqQ==" data-type="subscription">
-  <input type="text" placeholder="seu nome" name="FIRSTNAME" />
-  <input type="email" placeholder="seu e-mail" name="EMAIL" required />
-  <button type="submit" class="btn btn-primary">quero receber</button>
-  <input type="text" name="email_address_check" value="" style="display:none">
-  <input type="hidden" name="locale" value="pt">
-  <small>cancele quando quiser · seus dados são seus</small>
-</form>
+  <div class="container">
+    <div class="newsletter-box">
+
+      <div class="newsletter-box__text">
+        <h2>vamos nos conectar?</h2>
+        <p>
+          e-mails com o que eu estou testando, ajustando e mantendo na minha rotina. sem filtro, sem fórmula.
+        </p>
+        <p style="font-size:12px; opacity:0.7;">
+          sem spam. sem insistência. por aqui eu falo com mais calma.
+        </p>
       </div>
+
+      <form class="newsletter-box__form" method="POST" action="https://405d3274.sibforms.com/serve/MUIFAN8Y2aHduBvnlCJPJExB7vCpgHHtoxazlU3xVWZL9cOZ-9G2aPhr1e5EMpCclm01OOatFCI0iaR415HvZkMYJDUfvMcGN4c3-fTySVMjGPta6f_bVK62GblFeq-1E82_fwP_oLFNo9HWMOsYxs5NovgNrDEA-JUhQ1qwK8LZmUIt1La_XCXuFCEkMYITDX8C1d-uWzqOuQNrqQ==" data-type="subscription">
+        <input type="text" placeholder="seu nome" name="FIRSTNAME" />
+        <input type="email" placeholder="seu e-mail" name="EMAIL" required />
+        <button type="submit" class="btn btn-primary">receber</button>
+        <input type="text" name="email_address_check" value="" style="display:none">
+        <input type="hidden" name="locale" value="pt">
+        <small>cancele quando quiser · seus dados são seus</small>
+      </form>
+
+    </div>
+  </div>
+</section>
     </div>
   </section>
 <script>

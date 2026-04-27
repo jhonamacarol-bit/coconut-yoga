@@ -1,6 +1,6 @@
 ---
 title: "TESTE BUBU"
-description: "Teste bulldog fluffy"
+description: "Teste bulldog bonito fluffy"
 pubDate: 2025-01-29
 fase: menstrual
 categoria: bem-estar

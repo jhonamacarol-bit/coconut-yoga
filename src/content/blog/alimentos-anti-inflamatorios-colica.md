@@ -1,6 +1,6 @@
 ---
 title: "TESTE BUBU"
-description: "O que você come durante a menstruação pode diminuir ou aumentar a inflamação — e a cólica. Aqui estão os alimentos que realmente ajudam."
+description: "Teste bulldog fluffy"
 pubDate: 2025-01-29
 fase: menstrual
 categoria: bem-estar

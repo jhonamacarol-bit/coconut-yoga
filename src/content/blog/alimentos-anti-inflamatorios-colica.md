@@ -8,7 +8,7 @@ readTime: 5
 featured: true
 ---
 
-A cólica menstrual acontece porque o útero libera prostaglandinas — substâncias inflamatórias que causam as contrações. E a alimentação tem um papel direto em quanto dessas prostaglandinas você produz.
+Olá, mexi no texto
 
 Não é milagre. É bioquímica.
 

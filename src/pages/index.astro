@@ -2,8 +2,6 @@
 import Base from '../layouts/Base.astro';
 import { getCollection, getEntry } from 'astro:content';
 
-<h1>TESTE</h1>
-
 const posts = await getCollection('blog');
 const featured = posts.filter(p => p.data.featured).slice(0, 3);
 const recent = posts.sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 6);
@@ -137,8 +135,7 @@ const faseLabel: Record<string, string> = {
        {[
   { titulo: 'ciclos', texto: 'Aqui eu compartilho o meu estilo de vida e tudo o que me influencia, respeitando os meus ciclos, fases e a forma como a minha energia muda ao longo do tempo. Eu acredito que a vida não é linear, e que entender esses movimentos, do corpo, da mente e até da lua, muda completamente a forma como a gente se organiza e se trata.' },
   { titulo: 'alimentação', texto: 'Energia, fome e humor caminham juntos. Para mim, um corpo bonito é um corpo saudável. A forma como eu me alimento não vem de regras rígidas, mas de uma escuta constante do meu corpo, entendendo o que me sustenta, o que me dá energia e o que me faz sentir bem de verdade. Eu acredito em uma alimentação simples, consistente e funcional, que respeita o momento, evita excessos e constrói uma base sólida ao longo do tempo.' },
-  { titulo: 'diário pessoal', texto: 'Aqui, você e eu nos acompanhamos. Eu compartilho meus processos de forma real, os ajustes, os aprendizados, as fases boas e as que exigem mais de mim, porque evoluir é sobre continuidade. A ideia é crescer juntas, com mais consciência, mais presença e construindo uma rotina que faça sentido na prática, não só na teoria.' },
-]}
+{ titulo: 'diário pessoal', texto: 'Aqui, você e eu nos acompanhamos...' },
         ].map(v => (
           <div class="value-pill">
             <strong>{v.titulo}</strong>

@@ -1,570 +1,68 @@
 ---
-import Base from '../layouts/Base.astro';
+import BaseVenda from '../layouts/BaseVenda.astro';
 ---
 
-<Base
-  title="Diário de Alimentação Cíclica — Coconut Yoga"
-  description="214 páginas de cardápios reais, fases do ciclo, proteína, vitaminas, sistema linfático, cortisol, digestão, rotina e feminilidade."
->
+<BaseVenda title="Diário de Alimentação Cíclica — Coconut Yoga">
 
-  <!-- HERO -->
-  <section class="hero-venda">
-    <div class="deco-top">🕯️</div>
-    <div class="container hero-inner">
-      <div class="hero-badge">coconut yoga •</div>
-      <h1 class="hero-titulo">diário de<br>alimentação<br><em>cíclica</em></h1>
-      <p class="hero-sub">"uma rotina guiada pelos meus ciclos, pelo meu sistema nervoso e pela forma como eu aprendi a alimentar o meu corpo"</p>
-      <div class="hero-btns">
-        <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary">abrir meu diário</a>
-        <a href="#dentro" class="btn-venda btn-venda--ghost">ver o que tem dentro</a>
-      </div>
-    </div>
-    <div class="deco-talheres">
-      <span class="talher">🍴</span>
-      <span class="talher talher--right">🍴</span>
-    </div>
-  </section>
+  <div class="pagina-venda">
+    <img src="/pagina-vendas.png" alt="Diário de Alimentação Cíclica — Coconut Yoga" class="imagem-venda" />
 
-  <!-- APRESENTAÇÃO -->
-  <section class="section-venda">
-    <div class="container-narrow">
-      <div class="moldura">
-        <p class="frase-destaque">a minha alimentação começou a mudar quando eu parei de seguir o que funcionava para todo mundo… e comecei a observar o que funcionava <strong>para mim</strong></p>
-      </div>
-      <div class="duas-colunas">
-        <div>
-          <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary">quero o meu diário</a>
-          <a href="#dentro" class="btn-venda btn-venda--ghost" style="margin-top:12px">ver o que tem dentro</a>
-        </div>
-        <div class="texto-apresentacao">
-          <p>eu sempre observo: o que me deixa mais inchada. o que me dá energia. o que melhora o meu humor. o que me deixa mais focada. o que aumenta a minha ansiedade. o que deixa a minha pele mais bonita. e, aos poucos, eu fui entendendo padrões. isso muda muito ao longo do mês.</p>
-          <p>além da minha experiência pessoal, eu também venho estudando muito sobre alimentação através de livros, artigos científicos, podcasts sobre saúde feminina, pesquisas sobre hormônios, comportamento, neurociência e observando outras mulheres com rotinas parecidas com a minha.</p>
-        </div>
-      </div>
+    <div class="botoes-flutuantes">
+      <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-comprar">
+        abrir meu diário
+      </a>
     </div>
-  </section>
+  </div>
 
-  <!-- POR QUE EU CRIEI -->
-  <section class="section-venda section-venda--creme">
-    <div class="container-narrow">
-      <div class="duas-colunas duas-colunas--invertido">
-        <div class="texto-bloco">
-          <h2 class="titulo-secao">autoconhecimento<br>também exige sinceridade</h2>
-          <p>esse livro nasceu do meu desejo de me conhecer mais profundamente. e de respeitar o meu corpo. aqui eu anotei tudo o que eu escolhi seguir durante o ano de 2026 com a minha alimentação, respeitando os meus ciclos femininos, a minha energia feminina pessoal, a minha rotina intuitiva e também os dias específicos que naturalmente aparecem.</p>
-        </div>
-        <div class="texto-bloco">
-          <h2 class="titulo-secao">por que eu criei isso?<br>como tudo começou?</h2>
-          <p>honestamente, a minha paz sempre esteve na auto-observação. eu literalmente observo tudo o que eu como no meu dia a dia. eu anoto. eu testo. eu comparo. eu percebo padrões. e, muitas vezes, eu compartilho isso com vocês nas minhas redes sociais.</p>
-          <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary" style="margin-top:20px">quero o meu livro</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FASES DO CICLO -->
-  <section class="section-venda">
-    <div class="container-narrow">
-      <h2 class="titulo-secao titulo-centro">o que está acontecendo<br>com seu corpo?</h2>
-      <p class="subtitulo-centro">o corpo feminino não vive em linha reta. hormônios, cortisol, digestão, fome, criatividade e energia mudam ao longo do ciclo.</p>
-      <div class="fases-lista">
-        <div class="fase-linha">
-          <span class="fase-nome">fase menstrual</span>
-          <span class="fase-desc">mais introspecção</span>
-        </div>
-        <div class="fase-linha">
-          <span class="fase-nome">fase folicular</span>
-          <span class="fase-desc">mais clareza mental, mais energia social</span>
-        </div>
-        <div class="fase-linha">
-          <span class="fase-nome">fase ovulatória</span>
-          <span class="fase-desc">mais magnetismo</span>
-        </div>
-        <div class="fase-linha">
-          <span class="fase-nome">fase lútea</span>
-          <span class="fase-desc">mais fome, mais necessidade de estabilidade</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CITAÇÃO CENTRAL -->
-  <section class="section-venda section-venda--escuro">
-    <div class="container-narrow">
-      <blockquote class="citacao-grande">
-        "nada disso é aleatório. seu corpo está constantemente tentando te equilibrar. e quando você para de lutar contra isso e começa a ajustar sua rotina, tudo fica mais simples. inclusive comer bem."
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- É UMA DIETA? -->
-  <section class="section-venda">
-    <div class="container-narrow">
-      <div class="duas-colunas">
-        <div class="moldura-pequena">
-          <h2 class="titulo-secao">esse diário é uma<br>dieta?</h2>
-          <p>não. esse diário foi criado como uma forma de observar o corpo feminino ao longo do ciclo, entendendo fome, energia, rotina, hormônios e alimentação de uma forma mais intuitiva e consciente.</p>
-          <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary" style="margin-top:20px">quero começar agora</a>
-        </div>
-        <div class="numero-destaque">
-          <span class="numero">214</span>
-          <p>páginas de cardápios reais, fases do ciclo, proteína, vitaminas, sistema linfático, cortisol, digestão, rotina e feminilidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- O QUE TEM DENTRO -->
-  <section class="section-venda section-venda--creme" id="dentro">
-    <div class="container-narrow">
-      <h2 class="titulo-secao titulo-centro">o que existe dentro do diário</h2>
-      <div class="dentro-grid">
-        <div class="dentro-card">
-          <h3>alimentação cíclica</h3>
-          <ul>
-            <li>cardápios reais</li>
-            <li>refeições que eu realmente como</li>
-            <li>refeições sem glúten</li>
-            <li>alimentação cíclica</li>
-          </ul>
-        </div>
-        <div class="dentro-card">
-          <h3>hormônios + sistema nervoso</h3>
-          <ul>
-            <li>cortisol</li>
-            <li>retenção</li>
-            <li>energia</li>
-            <li>foco</li>
-          </ul>
-        </div>
-        <div class="dentro-card">
-          <h3>vitaminas + proteína</h3>
-          <ul>
-            <li>ferro</li>
-            <li>magnésio</li>
-            <li>vitamina c</li>
-            <li>proteína por refeição</li>
-          </ul>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:40px">
-        <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary btn-venda--lg">quero o meu diário</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section-venda">
-    <div class="container-narrow container-faq">
-      <blockquote class="citacao-assinada">
-        "esse diário nasceu da observação."
-        <cite>— coconut yoga</cite>
-      </blockquote>
-      <div class="faq">
-        <div class="faq-item">
-          <strong>eu preciso seguir exatamente como está no diário?</strong>
-          <p>não. a ideia é que você observe padrões, adapte refeições e entenda melhor o que funciona para o seu corpo em diferentes fases do mês.</p>
-        </div>
-        <div class="faq-item">
-          <strong>o diário possui cardápios?</strong>
-          <p>sim. existem diferentes dias organizados por fases do ciclo, incluindo refeições mais leves, dias de mais fome, dias criativos, dias introspectivos e dias de mais estabilidade emocional.</p>
-        </div>
-        <div class="faq-item">
-          <strong>o diário é digital?</strong>
-          <p>sim. você recebe o acesso ao livro digital logo após a compra.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:40px">
-        <a href="https://pay.kiwify.com.br/DRYrrAj" target="_blank" class="btn-venda btn-venda--primary btn-venda--lg">quero o meu diário</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER BRAND -->
-  <section class="footer-brand">
-    <div class="container">
-      <p class="brand-nome">coconut yoga</p>
-      <div class="brand-redes">
-        <span>🎵 coconut yoga</span>
-        <span>📌 coconutyoga</span>
-        <span>▶️ yogacoconut</span>
-      </div>
-    </div>
-  </section>
-
-</Base>
+</BaseVenda>
 
 <style>
-/* ── FONTES E BASE ── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;1,400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-  --venda-creme: #F5F0E8;
-  --venda-creme-escuro: #EDE6D8;
-  --venda-escuro: #1C1A17;
-  --venda-rosa: #D4A0A0;
-  --venda-borda: #C8BFA8;
-  --venda-texto: #3A3530;
-  --venda-texto-leve: #7A6E60;
-}
+  body {
+    background: #F5F0E8;
+    font-family: 'Georgia', serif;
+  }
 
-/* reset para essa página */
-.hero-venda, .section-venda, .footer-brand {
-  font-family: 'Lora', Georgia, serif;
-  color: var(--venda-texto);
-}
+  .pagina-venda {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-/* ── HERO ── */
-.hero-venda {
-  background: var(--venda-creme);
-  text-align: center;
-  padding: 60px 20px 80px;
-  border-bottom: 1px solid var(--venda-borda);
-  position: relative;
-}
-.deco-top {
-  font-size: 32px;
-  margin-bottom: 16px;
-  display: block;
-}
-.hero-badge {
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: var(--venda-texto-leve);
-  margin-bottom: 20px;
-  text-transform: lowercase;
-}
-.hero-titulo {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--venda-escuro);
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-}
-.hero-titulo em {
-  font-style: italic;
-  color: var(--venda-texto);
-}
-.hero-sub {
-  font-size: 15px;
-  font-style: italic;
-  color: var(--venda-texto-leve);
-  max-width: 52ch;
-  margin: 0 auto 36px;
-  line-height: 1.8;
-}
-.hero-btns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.deco-talheres {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 32px;
-  pointer-events: none;
-  font-size: 28px;
-  opacity: 0.3;
-}
-.talher--right { transform: scaleX(-1); }
+  .imagem-venda {
+    width: 100%;
+    display: block;
+  }
 
-/* ── BOTÕES ── */
-.btn-venda {
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 2px;
-  font-family: 'Lora', serif;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  border: 1px solid var(--venda-escuro);
-  text-decoration: none;
-  transition: all 0.2s;
-  text-align: center;
-}
-.btn-venda--primary {
-  background: var(--venda-escuro);
-  color: var(--venda-creme);
-}
-.btn-venda--primary:hover {
-  background: #333;
-}
-.btn-venda--ghost {
-  background: transparent;
-  color: var(--venda-escuro);
-}
-.btn-venda--ghost:hover {
-  background: var(--venda-creme-escuro);
-}
-.btn-venda--lg {
-  padding: 18px 48px;
-  font-size: 16px;
-}
+  .botoes-flutuantes {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+  }
 
-/* ── SEÇÕES ── */
-.section-venda {
-  padding: clamp(48px, 8vw, 96px) 20px;
-  background: white;
-}
-.section-venda--creme {
-  background: var(--venda-creme);
-}
-.section-venda--escuro {
-  background: var(--venda-escuro);
-}
-.container-narrow {
-  max-width: 860px;
-  margin: 0 auto;
-}
-.container-faq {
-  max-width: 640px;
-}
+  .btn-comprar {
+    background: #1C1A17;
+    color: #F5F0E8;
+    padding: 16px 40px;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    font-style: italic;
+    text-decoration: none;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
 
-/* ── MOLDURAS ── */
-.moldura {
-  border: 1px solid var(--venda-borda);
-  padding: 40px;
-  margin-bottom: 48px;
-  text-align: center;
-  background: var(--venda-creme);
-}
-.moldura-pequena {
-  border: 1px solid var(--venda-borda);
-  padding: 32px;
-  background: var(--venda-creme);
-}
-.frase-destaque {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-style: italic;
-  line-height: 1.6;
-  color: var(--venda-escuro);
-  margin: 0;
-}
-.frase-destaque strong {
-  font-style: normal;
-}
-
-/* ── TÍTULOS ── */
-.titulo-secao {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--venda-escuro);
-  margin-bottom: 16px;
-}
-.titulo-centro { text-align: center; margin-bottom: 24px; }
-.subtitulo-centro {
-  text-align: center;
-  font-style: italic;
-  color: var(--venda-texto-leve);
-  max-width: 50ch;
-  margin: 0 auto 40px;
-  line-height: 1.7;
-}
-
-/* ── COLUNAS ── */
-.duas-colunas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-.duas-colunas--invertido {
-  gap: 60px;
-}
-.texto-bloco p, .texto-apresentacao p {
-  font-size: 14px;
-  line-height: 1.85;
-  color: var(--venda-texto-leve);
-  margin-bottom: 16px;
-}
-
-/* ── FASES ── */
-.fases-lista {
-  border: 1px solid var(--venda-borda);
-  overflow: hidden;
-}
-.fase-linha {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 28px;
-  border-bottom: 1px solid var(--venda-borda);
-}
-.fase-linha:last-child { border-bottom: none; }
-.fase-nome {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-style: italic;
-  color: var(--venda-escuro);
-}
-.fase-desc {
-  font-size: 13px;
-  color: var(--venda-texto-leve);
-  text-align: right;
-}
-
-/* ── CITAÇÃO ── */
-.citacao-grande {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-style: italic;
-  color: var(--venda-creme);
-  text-align: center;
-  line-height: 1.7;
-  max-width: 56ch;
-  margin: 0 auto;
-  border: none;
-  padding: 0;
-}
-.citacao-assinada {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-style: italic;
-  color: var(--venda-escuro);
-  text-align: center;
-  border: none;
-  padding: 0;
-  margin: 0 0 48px;
-}
-.citacao-assinada cite {
-  display: block;
-  font-size: 13px;
-  font-style: normal;
-  color: var(--venda-texto-leve);
-  margin-top: 12px;
-  letter-spacing: 1px;
-}
-
-/* ── NÚMERO DESTAQUE ── */
-.numero-destaque {
-  text-align: center;
-  padding: 32px;
-  border: 1px solid var(--venda-borda);
-  background: var(--venda-creme);
-}
-.numero {
-  font-family: 'Playfair Display', serif;
-  font-size: 6rem;
-  line-height: 1;
-  color: var(--venda-escuro);
-  display: block;
-  margin-bottom: 16px;
-}
-.numero-destaque p {
-  font-size: 14px;
-  font-style: italic;
-  color: var(--venda-texto-leve);
-  line-height: 1.7;
-}
-
-/* ── DENTRO DO DIÁRIO ── */
-.dentro-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
-}
-.dentro-card {
-  border: 1px solid var(--venda-borda);
-  padding: 28px 24px;
-  background: white;
-}
-.dentro-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--venda-escuro);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--venda-borda);
-}
-.dentro-card ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.dentro-card li {
-  font-size: 13px;
-  color: var(--venda-texto-leve);
-  padding-left: 14px;
-  position: relative;
-}
-.dentro-card li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--venda-borda);
-}
-
-/* ── FAQ ── */
-.faq {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid var(--venda-borda);
-}
-.faq-item {
-  padding: 24px 28px;
-  border-bottom: 1px solid var(--venda-borda);
-}
-.faq-item:last-child { border-bottom: none; }
-.faq-item strong {
-  display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--venda-escuro);
-  margin-bottom: 10px;
-}
-.faq-item p {
-  font-size: 13px;
-  color: var(--venda-texto-leve);
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* ── FOOTER BRAND ── */
-.footer-brand {
-  background: var(--venda-escuro);
-  padding: 40px 20px;
-  text-align: center;
-}
-.brand-nome {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  color: var(--venda-creme);
-  margin-bottom: 16px;
-}
-.brand-redes {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  font-size: 13px;
-  color: #8A7A6A;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  .duas-colunas { grid-template-columns: 1fr; gap: 32px; }
-  .dentro-grid { grid-template-columns: 1fr; }
-  .fase-linha { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .fase-desc { text-align: left; }
-  .deco-talheres { display: none; }
-  .brand-redes { flex-direction: column; gap: 12px; }
-}
+  .btn-comprar:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  }
 </style>

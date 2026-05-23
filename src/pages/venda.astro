@@ -19,8 +19,13 @@ import BaseVenda from '../layouts/BaseVenda.astro';
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
+  html, body {
+    width: 100%;
+    min-height: 100vh;
     background: #F5F0E8;
+  }
+
+  body {
     font-family: 'Georgia', serif;
   }
 
@@ -28,10 +33,12 @@ import BaseVenda from '../layouts/BaseVenda.astro';
     position: relative;
     max-width: 600px;
     margin: 0 auto;
+    background: #F5F0E8;
   }
 
   .imagem-venda {
     width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -63,6 +70,5 @@ import BaseVenda from '../layouts/BaseVenda.astro';
   .btn-comprar:hover {
     background: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
   }
 </style>
